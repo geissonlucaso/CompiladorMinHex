@@ -1,0 +1,10 @@
+C:\Users\Geisson\Desktop\PUC\Arquitetura de Computadores II\Relatórios\Relatório 5\Relatório5b\CompiladorMinHex\CompiladorMinHex\CompiladorMinHex\bin\Debug\CompiladorMinHex.exe.config
+C:\Users\Geisson\Desktop\PUC\Arquitetura de Computadores II\Relatórios\Relatório 5\Relatório5b\CompiladorMinHex\CompiladorMinHex\CompiladorMinHex\bin\Debug\CompiladorMinHex.exe
+C:\Users\Geisson\Desktop\PUC\Arquitetura de Computadores II\Relatórios\Relatório 5\Relatório5b\CompiladorMinHex\CompiladorMinHex\CompiladorMinHex\bin\Debug\CompiladorMinHex.pdb
+C:\Users\Geisson\Desktop\PUC\Arquitetura de Computadores II\Relatórios\Relatório 5\Relatório5b\CompiladorMinHex\CompiladorMinHex\CompiladorMinHex\obj\Debug\CompiladorMinHex.csprojAssemblyReference.cache
+C:\Users\Geisson\Desktop\PUC\Arquitetura de Computadores II\Relatórios\Relatório 5\Relatório5b\CompiladorMinHex\CompiladorMinHex\CompiladorMinHex\obj\Debug\CompiladorMinHex.Form1.resources
+C:\Users\Geisson\Desktop\PUC\Arquitetura de Computadores II\Relatórios\Relatório 5\Relatório5b\CompiladorMinHex\CompiladorMinHex\CompiladorMinHex\obj\Debug\CompiladorMinHex.Properties.Resources.resources
+C:\Users\Geisson\Desktop\PUC\Arquitetura de Computadores II\Relatórios\Relatório 5\Relatório5b\CompiladorMinHex\CompiladorMinHex\CompiladorMinHex\obj\Debug\CompiladorMinHex.csproj.GenerateResource.cache
+C:\Users\Geisson\Desktop\PUC\Arquitetura de Computadores II\Relatórios\Relatório 5\Relatório5b\CompiladorMinHex\CompiladorMinHex\CompiladorMinHex\obj\Debug\CompiladorMinHex.csproj.CoreCompileInputs.cache
+C:\Users\Geisson\Desktop\PUC\Arquitetura de Computadores II\Relatórios\Relatório 5\Relatório5b\CompiladorMinHex\CompiladorMinHex\CompiladorMinHex\obj\Debug\CompiladorMinHex.exe
+C:\Users\Geisson\Desktop\PUC\Arquitetura de Computadores II\Relatórios\Relatório 5\Relatório5b\CompiladorMinHex\CompiladorMinHex\CompiladorMinHex\obj\Debug\CompiladorMinHex.pdb
