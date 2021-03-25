@@ -35,6 +35,7 @@ namespace CompiladorMinHex
             this.lblTitulo = new System.Windows.Forms.Label();
             this.ltbHexadecimal = new System.Windows.Forms.ListBox();
             this.btnAbrirMne = new System.Windows.Forms.Button();
+            this.btnCompilar = new System.Windows.Forms.Button();
             this.gpbMnemonico.SuspendLayout();
             this.gpbHexadecimal.SuspendLayout();
             this.SuspendLayout();
@@ -94,13 +95,25 @@ namespace CompiladorMinHex
             // 
             // btnAbrirMne
             // 
-            this.btnAbrirMne.Location = new System.Drawing.Point(200, 337);
+            this.btnAbrirMne.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAbrirMne.Location = new System.Drawing.Point(200, 384);
             this.btnAbrirMne.Name = "btnAbrirMne";
-            this.btnAbrirMne.Size = new System.Drawing.Size(75, 83);
+            this.btnAbrirMne.Size = new System.Drawing.Size(75, 36);
             this.btnAbrirMne.TabIndex = 3;
             this.btnAbrirMne.Text = "Abrir";
             this.btnAbrirMne.UseVisualStyleBackColor = true;
             this.btnAbrirMne.Click += new System.EventHandler(this.btnAbrirMne_Click);
+            // 
+            // btnCompilar
+            // 
+            this.btnCompilar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCompilar.Location = new System.Drawing.Point(299, 119);
+            this.btnCompilar.Name = "btnCompilar";
+            this.btnCompilar.Size = new System.Drawing.Size(144, 69);
+            this.btnCompilar.TabIndex = 3;
+            this.btnCompilar.Text = "Compilar";
+            this.btnCompilar.UseVisualStyleBackColor = true;
+            this.btnCompilar.Click += new System.EventHandler(this.btnCompilar_Click);
             // 
             // Form1
             // 
@@ -108,6 +121,7 @@ namespace CompiladorMinHex
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.ClientSize = new System.Drawing.Size(742, 529);
+            this.Controls.Add(this.btnCompilar);
             this.Controls.Add(this.lblTitulo);
             this.Controls.Add(this.gpbHexadecimal);
             this.Controls.Add(this.gpbMnemonico);
@@ -128,6 +142,7 @@ namespace CompiladorMinHex
         private System.Windows.Forms.ListBox ltbMnemonico;
         private System.Windows.Forms.ListBox ltbHexadecimal;
         private System.Windows.Forms.Label lblTitulo;
+        private System.Windows.Forms.Button btnCompilar;
     }
 }
 
