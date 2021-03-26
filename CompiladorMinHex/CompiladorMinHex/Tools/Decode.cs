@@ -12,7 +12,19 @@ namespace CompiladorMinHex.Tools
         private static String X { get; set; }
         private static String Y { get; set; }
         private static String W { get; set; }
-        public static String InstructionHex { get; private set; }
+
+        private static string instructionHex;
+
+        private static string GetInstructionHex()
+        {
+            return instructionHex;
+        }
+
+        private static void SetInstructionHex()
+        {
+            instructionHex = X + Y + W;
+        }
+
         public static bool FlagRecord { get; private set; }
 
         // Método para compilar a instrução mnemônica.
@@ -20,18 +32,19 @@ namespace CompiladorMinHex.Tools
         {
             // Analisa a linha lida atualmente.
             Decode.Analyse(line);
-            string instrucaoHex = Decode.InstructionHex;
+            string instrucaoHex = Decode.GetInstructionHex();
 
             return instrucaoHex;
         }
 
         // Método para obter instrução compilada.
-        public static void Analyse(string line)
+        private static void Analyse(string line)
         {
             // Verifica se é o inicio ou fim.
             if (line == "inicio:" || line == "fim.") {
                 FlagRecord = false;         // Desabilita a exibicao e gravacao da instrucao hexadecimal.
-                return; 
+                SetInstructionHex();
+                return;
             }
 
             line = Regex.Replace(line, @";", String.Empty);     // Substitui o ';' por ''.
@@ -49,10 +62,10 @@ namespace CompiladorMinHex.Tools
             }
 
             // Constrói a instrução hexadecimal.
-            BuildInstruction();
+            SetInstructionHex();
         }
 
-        public static void CutInstruction(string linha)
+        private static void CutInstruction(string linha)
         {
             string[] caracteres = linha.Split('=');
             if (caracteres[0] == "X")
@@ -61,7 +74,7 @@ namespace CompiladorMinHex.Tools
                 Y = caracteres[1];
         }
 
-        public static void CutOperation(string linha)
+        private static void CutOperation(string linha)
         {
             switch (linha)
             {
@@ -116,11 +129,6 @@ namespace CompiladorMinHex.Tools
                 default:
                     break;
             }
-        }
-
-        private static void BuildInstruction()
-        {
-            InstructionHex = X + Y + W;
         }
     }
 }
