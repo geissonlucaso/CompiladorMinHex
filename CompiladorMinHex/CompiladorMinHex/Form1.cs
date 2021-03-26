@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CompiladorMinHex.Tools;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -29,16 +30,7 @@ namespace CompiladorMinHex
 
             if (File.Exists(file))
             {
-                String[] linhas = File.ReadAllLines(file);
-                ltbMnemonico.Items.Clear();
-
-                // Percorre cada uma das linhas (item do vetor).
-                foreach (String linha in linhas)
-                {
-                    // Adiciona a linha no ListBox.
-                    ltbMnemonico.Items.Add(linha);
-                }
-
+                ReadFile(file);
                 btnCompilar.Enabled = true;
             }
             else
@@ -50,15 +42,34 @@ namespace CompiladorMinHex
         // Compilar arquivo mnemônico para hexadecimal.
         private void btnCompilar_Click(object sender, EventArgs e)
         {
-            var instrucoes = ltbMnemonico.Items;
-            ltbHexadecimal.Items.Clear();
+            var instrucoes = ltbMnemonico.Items;        // Instruções mnemônicas do ListBox Mnemônico.
+            ltbHexadecimal.Items.Clear();               // Limpar o ListBox Hexadecimal.
 
+            // Percorrer as instruções menemônicas.
             foreach (var instrucao in instrucoes)
             {
-                ltbHexadecimal.Items.Add(instrucao);
+                String linha = instrucao.ToString();
+
+                String instrucaoHex = Decode.Compile(linha);
+                if (Decode.FlagRecord)
+                    ltbHexadecimal.Items.Add(instrucaoHex);     // Adicionar a instrução no ListBox Hexadecimal.
             }
 
-            btnCompilar.Enabled = false;
+            btnCompilar.Enabled = false;                // Desabilitar botão 'Compilar'.
+        }
+
+        // Método para ler arquivo.
+        private void ReadFile(string file)
+        {
+            String[] linhas = File.ReadAllLines(file);
+            ltbMnemonico.Items.Clear();
+
+            // Percorre cada uma das linhas (item do vetor).
+            foreach (String linha in linhas)
+            {
+                // Adiciona a linha no ListBox.
+                ltbMnemonico.Items.Add(linha);
+            }
         }
     }
 }
