@@ -26,7 +26,7 @@ namespace CompiladorMinHex
         // Abrir arquivo mnemônico.
         private void btnAbrirMne_Click(object sender, EventArgs e)
         {
-            file = @"C:\Users\Geisson\Desktop\PUC\Arquitetura de Computadores II\Relatórios\Relatório 5\Relatório5b\CompiladorMinHex\CompiladorMinHex\CompiladorMinHex\DataMne\teste.txt";
+            file = @"C:\Users\Geisson\Desktop\PUC\Arquitetura de Computadores II\Relatórios\Relatório 5\Relatório5b\CompiladorMinHex\CompiladorMinHex\CompiladorMinHex\DataMne\In.txt";
 
             if (File.Exists(file))
             {
@@ -42,20 +42,33 @@ namespace CompiladorMinHex
         // Compilar arquivo mnemônico para hexadecimal.
         private void btnCompilar_Click(object sender, EventArgs e)
         {
-            var instrucoes = ltbMnemonico.Items;        // Instruções mnemônicas do ListBox Mnemônico.
-            ltbHexadecimal.Items.Clear();               // Limpar o ListBox Hexadecimal.
-
-            // Percorrer as instruções menemônicas.
-            foreach (var instrucao in instrucoes)
+            var instrucoes = ltbMnemonico.Items;                // Instruções mnemônicas do ListBox Mnemônico.
+            
+            ltbHexadecimal.Items.Clear();                       // Limpar o ListBox Hexadecimal.
+            file = @"C:\Users\Geisson\Desktop\PUC\Arquitetura de Computadores II\Relatórios\Relatório 5\Relatório5b\CompiladorMinHex\CompiladorMinHex\CompiladorMinHex\DataHex\Out.txt";
+            
+            // Objeto para escrever no arquivo.
+            using (StreamWriter writer = new StreamWriter(file))
             {
-                String linha = instrucao.ToString();
+                String linha;
+                String instrucaoHex;
 
-                String instrucaoHex = Decode.Compile(linha);
-                if (Decode.FlagRecord)
-                    ltbHexadecimal.Items.Add(instrucaoHex);     // Adicionar a instrução no ListBox Hexadecimal.
+                // Percorrer as instruções menemônicas.
+                foreach (var instrucao in instrucoes)
+                {
+                    linha = instrucao.ToString();
+                    instrucaoHex = Decode.Compile(linha);           // Compila Ins. mnemônico em Ins. hexadecimal para a ULA.
+
+                    if (Decode.FlagRecord)
+                    {
+                        ltbHexadecimal.Items.Add(instrucaoHex);     // Adicionar a instrução no ListBox Hexadecimal.
+                        writer.WriteLine(instrucaoHex);             // Escreve a instrução hex no arquivo.
+                    }
+                }
+
+                writer.Close();                                     // Fechar writer para escrita.
             }
-
-            btnCompilar.Enabled = false;                // Desabilitar botão 'Compilar'.
+            btnCompilar.Enabled = false;                        // Desabilitar botão 'Compilar'.
         }
 
         // Método para ler arquivo.

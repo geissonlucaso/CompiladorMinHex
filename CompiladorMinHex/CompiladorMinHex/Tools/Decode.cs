@@ -37,7 +37,7 @@ namespace CompiladorMinHex.Tools
             return instrucaoHex;
         }
 
-        // Método para obter instrução compilada.
+        // Método para analisar a instrução mnemônica e obter instrução compilada.
         private static void Analyse(string line)
         {
             // Verifica se é o inicio ou fim.
